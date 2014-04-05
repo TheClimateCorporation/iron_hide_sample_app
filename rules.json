@@ -1,0 +1,54 @@
+  [
+    {
+      "resource": "TestApp::Book",
+      "action": ["read"],
+      "description": "Allow owners to read their books",
+      "effect": "allow",
+      "conditions": [
+        {
+          "equal": {
+            "resource::owner::id": ["user::id"]
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TestApp::Book",
+      "action": ["read", "write", "sell"],
+      "description": "Allow authors to read, write, and sell their books",
+      "effect": "allow",
+      "conditions": [
+        {
+          "equal": {
+            "resource::author::id": ["user::id"]
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TestApp::Book",
+      "action": ["write"],
+      "description": "Disallow users from writing books in languages they do not speak",
+      "effect": "deny",
+      "conditions": [
+        {
+          "not_equal": {
+            "resource::language": ["user::language"]
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TestApp::User",
+      "action": ["borrow_book"],
+      "description": "Allows users to borrow books from friendly users",
+      "effect": "allow",
+      "conditions": [
+        {
+          "equal": {
+            "resource::friendly": [true]
+          }
+        }
+      ]
+    }
+  ]
