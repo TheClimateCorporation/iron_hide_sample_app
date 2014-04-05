@@ -1,13 +1,9 @@
-PATH
-  remote: ../iron_hide
+GEM
+  remote: https://www.rubygems.org/
   specs:
     iron_hide (0.2.1)
       json_minify (~> 0.2)
       multi_json
-
-GEM
-  remote: https://www.rubygems.org/
-  specs:
     json_minify (0.2.1)
       multi_json (~> 1)
     multi_json (1.9.2)
@@ -16,4 +12,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  iron_hide!
+  iron_hide
