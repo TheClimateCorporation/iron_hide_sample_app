@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://127.0.0.1:5984/rules/_design/rules/_view/resource_rules?key=%22TestApp::Book::write%22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - CouchDB/1.5.0 (Erlang OTP/R16B03-1)
+      Etag:
+      - "\"3AMIPMKUWNS9THHO51Q5L15E9\""
+      Date:
+      - Tue, 15 Apr 2014 19:00:45 GMT
+      Content-Type:
+      - text/plain; charset=utf-8
+      Cache-Control:
+      - must-revalidate
+    body:
+      encoding: UTF-8
+      string: "{\"total_rows\":10,\"offset\":7,\"rows\":[\r\n{\"id\":\"435500118677931c6e0ca33dd8067bd1\",\"key\":\"TestApp::Book::write\",\"value\":{\"_id\":\"435500118677931c6e0ca33dd8067bd1\",\"_rev\":\"1-248bf483d292e4d14d56dbe14b48ebd6\",\"resource\":\"TestApp::Book\",\"action\":[\"read\",\"write\",\"sell\"],\"description\":\"Allow
+        authors to read, write, and sell their books\",\"effect\":\"allow\",\"conditions\":[{\"equal\":{\"resource::author::id\":[\"user::id\"]}}]}},\r\n{\"id\":\"435500118677931c6e0ca33dd8068279\",\"key\":\"TestApp::Book::write\",\"value\":{\"_id\":\"435500118677931c6e0ca33dd8068279\",\"_rev\":\"1-b212eb80183fe2e1b1a113f22c5d53e6\",\"resource\":\"TestApp::Book\",\"action\":[\"write\"],\"description\":\"Disallow
+        users from writing books in languages they do not speak\",\"effect\":\"deny\",\"conditions\":[{\"not_equal\":{\"resource::language\":[\"user::language\"]}}]}}\r\n]}\n"
+    http_version: 
+  recorded_at: Tue, 15 Apr 2014 19:00:45 GMT
+recorded_with: VCR 2.8.0

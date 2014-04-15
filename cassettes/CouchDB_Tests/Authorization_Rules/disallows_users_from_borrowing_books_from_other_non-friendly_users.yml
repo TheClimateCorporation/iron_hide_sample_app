@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://127.0.0.1:5984/rules/_design/rules/_view/resource_rules?key=%22TestApp::User::borrow_book%22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - CouchDB/1.5.0 (Erlang OTP/R16B03-1)
+      Etag:
+      - "\"6QWQM0UBZEW34Y4AF96UZJBGJ\""
+      Date:
+      - Tue, 15 Apr 2014 19:00:45 GMT
+      Content-Type:
+      - text/plain; charset=utf-8
+      Cache-Control:
+      - must-revalidate
+    body:
+      encoding: UTF-8
+      string: "{\"total_rows\":10,\"offset\":9,\"rows\":[\r\n{\"id\":\"435500118677931c6e0ca33dd8068c68\",\"key\":\"TestApp::User::borrow_book\",\"value\":{\"_id\":\"435500118677931c6e0ca33dd8068c68\",\"_rev\":\"1-7bdcca1874dd9c84f108a5b623915b55\",\"resource\":\"TestApp::User\",\"action\":[\"borrow_book\"],\"description\":\"Allows
+        users to borrow books from friendly users\",\"effect\":\"allow\",\"conditions\":[{\"equal\":{\"resource::friendly\":[true]}}]}}\r\n]}\n"
+    http_version: 
+  recorded_at: Tue, 15 Apr 2014 19:00:45 GMT
+recorded_with: VCR 2.8.0
